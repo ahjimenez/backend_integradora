@@ -13,3 +13,23 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Client {
+  id    String  @id @default(cuid())
+  name_company  String
+  name_manager  String
+  LastName_manager  String
+  phone    String
+  email     String  @unique
+  cc_email  String
+  address  String
+  city     String
+  state    String
+  zip_code String
+  Procesamiento_factura String
+  active   Boolean @default(true)
+  // timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+}
