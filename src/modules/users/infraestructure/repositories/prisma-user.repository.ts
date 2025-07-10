@@ -21,14 +21,5 @@ export class PrismaUsersRepository implements IUserRepository {
    
         return UserMapper.toDomain(newUser); 
     }
-    /*  findByEmail(email: string): Promise<User | null> {
-         throw new Error("Method not implemented.");
-     }
-     validateUser(email: string, password: string): Promise<User> {
-         throw new Error("Method not implemented.");
-     }
-     generateToken(user: User): Promise<{ token: string; }> {
-         throw new Error("Method not implemented.");
-     } */
 
 }
