@@ -13,3 +13,21 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Properties {
+  id String @id @default(uuid())
+  property_name String
+  manager_name String
+  last_name_mgr String
+  id_client String
+  phone Int
+  email String
+  cc_email String
+  address String
+  city String
+  state String
+  zip Int
+  invoice_processing String
+  territory String
+
+}
