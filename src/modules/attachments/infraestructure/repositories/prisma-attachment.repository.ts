@@ -11,7 +11,7 @@ export class PrismaAttachmentsRepository implements IAttachmentRepository {
     constructor(private readonly prismaService: PrismaService) { }
 
     async create(attachment: Attachment): Promise<Attachment | null> {
-
+      console.log(attachment)
       const newAttachment = await this.prismaService.attachment.create({
             data: {
               ...attachment,

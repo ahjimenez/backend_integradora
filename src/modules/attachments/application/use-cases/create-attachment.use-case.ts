@@ -13,7 +13,7 @@ export class CreateAttachmentUseCase{
     const attachmentData = new Attachment(
       '', 
       dto.id_estimated,
-      dto.url_link
+      dto.url_link,
     );
   
     return this.attachmentRepository.create(attachmentData); 

@@ -13,6 +13,7 @@ export class AttachmentController {
   @Post()
   @HttpCode(HttpStatus.CREATED)
   async create(@Body() createAttachmentDto: CreateAttachmentDto): Promise<Attachment | null> {
+    console.log(createAttachmentDto)
     return this.createAttachmentUseCase.execute(createAttachmentDto);
   }
 
