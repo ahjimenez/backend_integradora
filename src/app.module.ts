@@ -2,10 +2,25 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PropertiesModule } from './properties/properties.module';
+import { AttachmentsModule } from './modules/attachments/attachments.module';
+import { EstimatesModule } from './modules/estimates/estimates.module';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
-  imports: [PropertiesModule],
+  imports: [
+        UsersModule,
+        EstimatesModule,
+        AttachmentsModule,
+        PropertiesModule,
+        ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+],
 })
-export class AppModule {}
+
+export class AppModule {
+  // Este módulo es el punto de entrada de la aplicación NestJS
+  // Aquí se importan los módulos necesarios y se configuran los controladores y servicios
+  // El módulo EstimatesModule se encarga de la lógica relacionada con los estimados
+} 

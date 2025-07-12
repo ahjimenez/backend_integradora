@@ -7,10 +7,10 @@
 
 */
 -- AlterTable
-   /* ALTER TABLE `estimate` DROP COLUMN `creation_date`,
+ALTER TABLE `estimate` DROP COLUMN `creation_date`,
     ADD COLUMN `send_date` DATETIME(6) NOT NULL,
     MODIFY `quantity` DECIMAL(8, 2) NOT NULL,
     MODIFY `amount` DECIMAL(8, 2) NOT NULL,
     MODIFY `subtotal` DECIMAL(8, 2) NOT NULL,
     MODIFY `tax_amount` DECIMAL(8, 2) NOT NULL,
-    MODIFY `total` DECIMAL(8, 2) NOT NULL;*/
+    MODIFY `total` DECIMAL(8, 2) NOT NULL;

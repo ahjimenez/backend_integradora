@@ -15,6 +15,5 @@ CREATE TABLE `Estimate` (
     `subtotal` FLOAT NOT NULL,
     `tax_amount` FLOAT NOT NULL,
     `total` FLOAT NOT NULL,
-
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
