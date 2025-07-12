@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { PropertiesModule } from './properties/properties.module';
 import { AttachmentsModule } from './modules/attachments/attachments.module';
 import { EstimatesModule } from './modules/estimates/estimates.module';
 import { UsersModule } from './modules/users/users.module';
@@ -10,6 +11,7 @@ import { UsersModule } from './modules/users/users.module';
         UsersModule,
         EstimatesModule,
         AttachmentsModule,
+        PropertiesModule,
         ],
   controllers: [AppController],
   providers: [
