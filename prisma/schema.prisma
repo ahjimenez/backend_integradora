@@ -13,3 +13,31 @@ model Attachment{
   id_estimated String @db.VarChar(128)
   url_link String @db.VarChar(64)
 }
+
+model Estimate {
+  id               String   @id @default(uuid())
+  id_property      String   @db.VarChar(64)
+  estimate_number  String   @db.VarChar(64)
+  send_date        DateTime @db.DateTime(6)
+  expiration_date  DateTime @db.DateTime(6)
+  acceptation_date DateTime @db.DateTime(6)
+  id_user          String   @db.VarChar(64)
+  service_type     String   @db.VarChar(64)
+  description      String   @db.VarChar(64)
+  quantity         Decimal  @db.Decimal(8, 2)
+  amount           Decimal  @db.Decimal(8, 2)
+  tax_included     Boolean
+  subtotal         Decimal  @db.Decimal(8, 2)
+  tax_amount       Decimal  @db.Decimal(8, 2)
+  total            Decimal  @db.Decimal(8, 2)
+}
+
+model User {
+  id String @id @default(cuid())
+  nombre String @db.VarChar(128)
+  apellido_paterno String @db.VarChar(128)
+  apellido_materno String @db.VarChar(128)
+  correo_electronico String @db.VarChar(100)
+  password String @db.VarChar(60)
+  activo String @db.VarChar(50)
+}
