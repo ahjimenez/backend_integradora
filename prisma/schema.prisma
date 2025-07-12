@@ -31,3 +31,14 @@ model Estimate {
   tax_amount       Decimal  @db.Decimal(8, 2)
   total            Decimal  @db.Decimal(8, 2)
 }
+
+model User {
+  id String @id @default(cuid())
+  nombre String @db.VarChar(128)
+  apellido_paterno String @db.VarChar(128)
+  apellido_materno String @db.VarChar(128)
+  correo_electronico String @db.VarChar(100)
+  password String @db.VarChar(60)
+  activo String @db.VarChar(50)
+}
+
