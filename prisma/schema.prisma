@@ -80,3 +80,8 @@ model User {
   activo String @db.VarChar(50)
 }
 
+model Services {
+  id String @id @default(uuid())
+  service_code String @db.VarChar (12)
+  service_description String @db.VarChar(256)
+}
