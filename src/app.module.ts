@@ -22,10 +22,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClientsModule } from './modules/clients/clients.module';
 
-import { PropertiesModule } from './properties/properties.module';
+import { PropertiesModule } from './modules/properties/properties.module';
 import { AttachmentsModule } from './modules/attachments/attachments.module';
 import { EstimatesModule } from './modules/estimates/estimates.module';
 import { UsersModule } from './modules/users/users.module';
+import { ServicesModule } from './modules/services/services.module';
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { UsersModule } from './modules/users/users.module';
         AttachmentsModule,
         PropertiesModule,
         ClientsModule,
+        ServicesModule,
         ],
   controllers: [AppController],
   providers: [
