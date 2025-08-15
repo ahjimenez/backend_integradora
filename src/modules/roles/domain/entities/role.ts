@@ -1,12 +1,16 @@
 export class Role {
 
-    id: string;
-    role: string; 
-    Role: string;
+    public id: string;
+    public role: string; 
+    public Role: string;
+    public createdAt: Date;
+    public updatedAt: Date;
 
     constructor(
         id: string,
         role: string,
+        createdAt: Date = new Date(),
+        updatedAt: Date = new Date()
     ) {
         this.id = id;
         this.role = role;   

@@ -1,6 +1,4 @@
-import { Role} from "../entities/role";
-
-
+import { Role } from "../../domain/entities/role";
 export abstract class RoleRepository {
   abstract create(role: Role): Promise<Role | null>;
   abstract getAll(): Promise<Role[]>;
@@ -8,4 +6,3 @@ export abstract class RoleRepository {
   abstract update(id: string, roleData: Partial<Role>): Promise<Role>;
   abstract delete(id: string): Promise<void>;
 }
-   
