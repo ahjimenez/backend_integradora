@@ -7,18 +7,24 @@ import { PrismaClientsRepository } from './modules/clients/infraestructure/repos
 import { PrismaService } from './core/databases/prisma.service';
 import { ClientsController } from './modules/clients/infraestructure/controllers/clients.controller';
 import { ClientsModule } from './modules/clients/clients.module';
+import { GetServicesUseCase } from './modules/services/application/use-cases/get-services.use-case';
+import { CreateServicesUseCase } from './modules/services/application/use-cases/create-services.use-case';
+import { ServicesModule } from './modules/services/services.module';
+import { ServicesController } from './modules/services/services.controller';
+import { PrismaServicesRepository } from './modules/services/infraestructure/repositories/prisma-services.repository';
+
 
 @Module({
-  imports: [ClientsModule],
-  controllers: [AppController, ClientsController],
+  imports: [ServicesModule],
+  controllers: [AppController, ServicesController],
   providers: [
     PrismaService,
     {
-      provide: ClientRepository,
-      useClass: PrismaClientsRepository, // Reemplazamos MemoryClientsRepository,
+      provide: PrismaServicesRepository,
+      useClass: PrismaServicesRepository, // Reemplazamos MemoryClientsRepository,
     },
-    CreateClientUseCase,
-    GetClientsUseCase,
+    CreateServicesUseCase,
+    GetServicesUseCase,
     AppService,
   ],
 }

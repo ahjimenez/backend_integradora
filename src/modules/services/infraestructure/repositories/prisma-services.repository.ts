@@ -17,7 +17,7 @@ export class PrismaServicesRepository implements IServicesRepository {
     const newServices = await this.prismaService.services.create({
       data: {
         ...Services,
-        //id: undefined, // Allow Prisma to generate the ID if not provided
+        id: undefined, // Allow Prisma to generate the ID if not provided
       }
     });
 

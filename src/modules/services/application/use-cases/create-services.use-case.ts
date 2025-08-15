@@ -4,7 +4,7 @@ import { IServicesRepository } from "src/modules/services/domain/interfaces/serv
 import { CreateServicesDto } from "../dtos/create-services.dto";
 
 /**
- * Caso de uso para registrar un estimado
+ * Caso de uso para registrar un servicio
  */
 @Injectable()
 export class CreateServicesUseCase {
@@ -26,7 +26,7 @@ export class CreateServicesUseCase {
 
     console.log(ServicesData);
 
-    // enviar a guardar el estimado a través del repositorio de estimados
+    // enviar a guardar el service a través del repositorio de services
     return this.serviceseRepository.create(ServicesData);
 
   }
