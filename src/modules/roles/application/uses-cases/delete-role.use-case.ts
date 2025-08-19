@@ -1,15 +1,11 @@
 import { Injectable } from "@nestjs/common";
-import { Role } from "../../domain/entities/role";
 import { RoleRepository } from "../../infraestructure/repositories/role-repository.interface";
-import { PrismaService } from "src/core/databases/prisma.service";
 
 @Injectable()
 export class DeleteRoleUseCase {
-   constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly roleRepository: RoleRepository) {}
 
-  async delete(id: string): Promise<void> {
-    await this.prisma.role.delete({
-      where: { id },
-    });
+  async execute(id: string): Promise<void> {
+    return this.roleRepository.delete(id);
   }
 }

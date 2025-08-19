@@ -1,8 +1,6 @@
 export class Role {
-
     public id: string;
-    public role: string; 
-    public Role: string;
+    public role: string;
     public createdAt: Date;
     public updatedAt: Date;
 
@@ -13,12 +11,14 @@ export class Role {
         updatedAt: Date = new Date()
     ) {
         this.id = id;
-        this.role = role;   
+        this.role = role;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
-     setId(id: string) {
-    this.id = id;
-  }
+    setId(id: string) {
+        this.id = id;
+    }
 
     value() {
         return {

@@ -7,7 +7,7 @@ import { UpdateRoleUseCase } from "../../application/uses-cases/update-role.use-
 import { DeleteRoleUseCase } from "../../application/uses-cases/delete-role.use-case";
 import { RoleRepository } from "../repositories/role-repository.interface";@Controller("roles")
 
-export class rolesController {
+export class RoleController {
     constructor(
         private readonly createRoleUseCase: CreateRoleUseCase,
         private readonly getRoleUseCase: GetRoleUseCase,
@@ -42,7 +42,7 @@ export class rolesController {
     @Delete(":id")
     @HttpCode(HttpStatus.NO_CONTENT)
     async delete(@Param('id') id: string): Promise<void> {
-        return this.deleteRoleUseCase.delete(id);
+        return this.deleteRoleUseCase.execute(id);
     }
 
  } 

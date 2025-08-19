@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { rolesController } from './infraestructure/controllers/roles.controller';
+import { RoleController } from './infraestructure/controllers/roles.controller';
 import { CreateRoleUseCase } from './application/uses-cases/create-role.use-case';
 import { GetRoleUseCase } from './application/uses-cases/get-role.use-case';
 import { UpdateRoleUseCase } from './application/uses-cases/update-role.use-case';
@@ -36,7 +36,7 @@ import { PrismaService } from '../../core/databases/prisma.service';
     UpdateRoleUseCase,
     DeleteRoleUseCase
     ],
-  controllers: [rolesController, RolesController],
+  controllers: [RoleController, RolesController],
 })
 
 export class RolesModule {}

@@ -19,7 +19,7 @@ export class RoleMapper {
   static toCreateInput(role: Role): Prisma.RoleUncheckedCreateInput {
     return {
       id: role.id,
-      role: role.Role,
+      role: role.role,
       createdAt: role.createdAt ?? new Date(),
       updatedAt: role.updatedAt ?? new Date(),
     };
@@ -30,7 +30,7 @@ export class RoleMapper {
    */
   static toUpdateInput(role: Role): Prisma.RoleUpdateInput {
     return {
-      role: role.Role,
+      role: role.role,
       updatedAt: new Date(),
     };
   }
@@ -41,7 +41,7 @@ export class RoleMapper {
   static toPrismaModel(role: Role): PrismaRole {
     return {
       id: role.id,
-      role: role.Role,
+      role: role.role,
       createdAt: role.createdAt ?? new Date(),
       updatedAt: role.updatedAt ?? new Date(),
     };

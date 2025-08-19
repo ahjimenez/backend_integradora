@@ -5,8 +5,8 @@ import { PrismaService } from "src/core/databases/prisma.service";
 
 @Injectable()
 export class GetRoleUseCase {
-    executeById(id: string): Role | PromiseLike<Role | null> | null {
-        throw new Error("Method not implemented.");
+    async executeById(id: string): Promise<Role | null> {
+        return this.roleRepository.getById(id);
     }
     constructor(private readonly roleRepository: RoleRepository) {}
     async execute(): Promise<Role[]> {
